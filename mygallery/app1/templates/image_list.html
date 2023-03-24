@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Image Gallery</h1>
+{% for image in images %}
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">{{ image.caption }}</h5>
+        <p class="card-text">{{ image.description }}</p>
+        <a href="{% url 'image_detail' image.pk %}" class="btn btn-primary">View</a>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
